@@ -33,7 +33,7 @@
                 android:textColor="#3F51B5" />
 
             <EditText
-                android:id="@+id/editHeight"
+                android:id="@+id/edtHeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
@@ -59,7 +59,7 @@
                 android:textColor="#3F51B5" />
 
             <EditText
-                android:id="@+id/editWeight"
+                android:id="@+id/edtWeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
@@ -85,7 +85,7 @@
                 android:text="@string/bmi" />
 
             <Button
-                android:id="@+id/btnClar"
+                android:id="@+id/btnClear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
