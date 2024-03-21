@@ -1,4 +1,4 @@
-package com.example.ui_test;
+package com.example.ui_test2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
