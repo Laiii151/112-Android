@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         EditText edtName = (EditText) findViewById(R.id.editName);
         TextView txvShow = (TextView) findViewById(R.id.txvShow);
         String name = edtName.getText().toString();
-        txvShow.setText("你的名字: " + name);
+        txvShow.setText("你的名字是: " + name);
     }
 }
