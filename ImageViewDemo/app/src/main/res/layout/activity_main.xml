@@ -47,31 +47,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imgOutput1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:visibility="gone"
+            app:srcCompat="@mipmap/dog" />
 
         <ImageView
             android:id="@+id/imgOutput2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:visibility="gone"
+            app:srcCompat="@mipmap/elephant" />
 
         <ImageView
             android:id="@+id/imgOutput3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:visibility="gone"
+            app:srcCompat="@mipmap/mouse" />
 
         <ImageView
             android:id="@+id/imgOutput4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:visibility="gone"
+            app:srcCompat="@mipmap/rabbit" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
