@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/gender"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/rgGender"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,18 +30,18 @@
 
         <RadioButton
             android:id="@+id/rdbBoy"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
 
             android:text="@string/male"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rdbGirl"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/female"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
     </RadioGroup>
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:hint="訊息欄"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/ticketTYpe"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/rgType"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -74,7 +74,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="132dp"
         android:text="@string/confirm"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgType" />
 
@@ -108,21 +108,21 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/regularticket"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rdbChild"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/childticket"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rdbStudent"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/studentticket"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
     </RadioGroup>
 
     <TextView
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/numberOfTickets"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -139,7 +139,7 @@
         app:layout_constraintVertical_bias="0.523" />
 
     <EditText
-        android:id="@+id/edtNumber"
+        android:id="@+id/edtNumberOfTickets"
         android:layout_width="141dp"
         android:layout_height="43dp"
         android:ems="10"

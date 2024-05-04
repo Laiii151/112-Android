@@ -19,11 +19,13 @@ import com.example.buytickets.R;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, TextWatcher {
     private TextView output;
-    private EditText edtnumber;
+    //private EditText edtnumber;
+    private int numberOfTickets = 0;
     private String outputStr = "";
-    private String outputGen = "";
-    private String outputType = "";
-    private String outputPrice = "";
+    private  String gender  = "";
+    private String Type = "";
+    //private String outputPrice = "";
+    private int price = 0;
     private RadioGroup rg;
     private RadioGroup type;
 
@@ -33,15 +35,15 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_main);
         rg = (RadioGroup) findViewById(R.id.rgGender);
         type = (RadioGroup) findViewById(R.id.rgType);
+        EditText edtNumberOfTickets = (EditText) findViewById(R.id.edtNumberOfTickets);
         // 註冊傾聽者物件
         rg.setOnCheckedChangeListener(this);
         type.setOnCheckedChangeListener(this);
-        edtnumber = (EditText) findViewById(R.id.edtNumber);
-        edtnumber.addTextChangedListener(this);
+        edtNumberOfTickets.addTextChangedListener(this);
         //num = Integer.parseInt(edtnumber.getText().toString());
         output = (TextView) findViewById(R.id.lblOutput);
-        //gender = getResources().getString(R.string.male);
-        //type = getResources().getString(R.string.);
+        gender = getResources().getString(R.string.male);
+        Type = getResources().getString(R.string.regularticket);
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             public void onClick(View v) {
                 String Str = "";
                 try {
-                    String text = edtnumber.getText().toString();
+                    String text = getResources().getString(R.string.numberOfTickets);
                     if (rg.getCheckedRadioButtonId() == -1) {
                         Str += "請選擇性別!\n";
                         if(type.getCheckedRadioButtonId() == -1)
@@ -101,46 +103,52 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     }
 
     public void TxvShow(RadioGroup radioGroup, int checkedId){
-        String outputnum = edtnumber.getText().toString();
+        //String outputnum = edtnumber.getText().toString();
+        String count = getResources().getString(R.string.numberOfTickets);
+        String total = getResources().getString(R.string.total);
         // 判斷選擇的 RadioButton
         if (radioGroup.getId() == R.id.rgGender) {
             if (checkedId == R.id.rdbBoy) {
-                outputGen = "男性\n";
+                gender = "Male\n";
             } else if (checkedId == R.id.rdbGirl) {
-                outputGen = "女性\n";
+                gender = "Female\n";
             }
         }
         else if(radioGroup.getId() == R.id.rgType) {
             if (checkedId == R.id.rdbAdult) {
-                outputType="成人票\n";
+                Type="Regular Ticket\n";
+                price = 500;
             } else if (checkedId == R.id.rdbChild) {
-                outputType="兒童票\n";
+                Type="Children Ticket\n";
+                price = 250;
             } else {
-                outputType="學生票\n";
+                Type="Student Ticket\n";
+                price = 400;
             }
         }
 
-        if(! outputnum.isEmpty()){
+        if(! count.isEmpty()){
             if(type.getCheckedRadioButtonId() == -1){
-                outputType = "";
+                Type = "";
             }
             else if(radioGroup.getId() == R.id.rgType) {
                 if (checkedId == R.id.rdbAdult) {
-                    outputPrice = "\n金額：" + (500 * Integer.parseInt(outputnum));
+                    total = "\n金額：" + (500 * Integer.parseInt(count));
                 } else if (checkedId == R.id.rdbChild) {
-                    outputPrice = "\n金額：" + (250 * Integer.parseInt(outputnum));
+                    total = "\n金額：" + (250 * Integer.parseInt(count));
                 } else {
-                    outputPrice = "\n金額：" + (400 * Integer.parseInt(outputnum));
+                    total = "\n金額：" + (400 * Integer.parseInt(count));
                 }
             }
-            outputnum = "張數：" + outputnum;
+            count = "張數：" + count;
         }
         else{
-            outputPrice = "";
-            outputnum = "";
+            total = "";
+            count = "";
         }
 
-        outputStr = outputGen + outputType + outputnum + outputPrice;
+        //outputStr = outputGen + outputType + count + outputPrice;
+        outputStr = String.format("%s%s%s%d%s\n%d",gender,Type,count,numberOfTickets,total,total);
         output.setText(outputStr);
         output.setTextColor(Color.BLACK);
     }
