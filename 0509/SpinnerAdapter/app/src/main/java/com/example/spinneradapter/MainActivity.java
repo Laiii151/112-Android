@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         spDesserts.setAdapter(adpDesserts);
 
         Button btnComfirm = (Button) findViewById(R.id.button);
+
         btnComfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 String dessert = spDesserts.getSelectedItem().toString();
                 TextView output = (TextView) findViewById(R.id.lblOutput);
                 output.setText("主餐: " + course + "\n甜點: " + dessert);
+            }
+        });
+
+        Button btnModify = (Button) findViewById(R.id.btnModify);
+        btnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                desserts[4] = "草莓蛋糕";
+                adpDesserts.notifyDataSetChanged();
             }
         });
 
