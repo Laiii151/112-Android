@@ -21,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
         cities = getResources().getStringArray(R.array.cities);
         lvcities = (ListView) findViewById(R.id.listview);
 
-        /*ArrayAdapter<String> adpCities = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, cities);*/
+        ArrayAdapter<String> adpCities = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, cities);
 
-        //lvcities.setAdapter(adpCities);
+        lvcities.setAdapter(adpCities);
         lvcities.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String city = (String) parent.getItemAtPosition(position);
                 TextView output = (TextView) findViewById(R.id.lblOutput);
-                output.setText("你是住在: " + cities[position]);
+                output.setText("你是住在: " + city);
                 Toast.makeText(MainActivity.this, "你是住在: " + city, Toast.LENGTH_SHORT).show();
             }
         });
