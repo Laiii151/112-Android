@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class OpActivity extends AppCompatActivity {
-    private TextView output;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +63,5 @@ public class OpActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch(requestCode) {
-            case 1:
-                if (resultCode == RESULT_OK) {
-                    Bundle bundle = data.getExtras();
-                    output.setText("計算結果: " + bundle.getDouble("RESULT"));
-                }
-                break;
-        }
-    }
+
 }
