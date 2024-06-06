@@ -17,20 +17,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        output = findViewById(R.id.lblOutput);
-        Button button = findViewById(R.id.button);
+        output = (TextView) findViewById(R.id.lblOutput);
+        Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText txtOpd1, txtOpd2;
-                txtOpd1 = findViewById(R.id.txtOpd1);
-                txtOpd2 = findViewById(R.id.txtOpd2);
+                txtOpd1 = (EditText) findViewById(R.id.txtOpd1);
+                txtOpd2 = (EditText) findViewById(R.id.txtOpd2);
                 Intent intent = new Intent(MainActivity.this, OpActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("OPERAND01", txtOpd1.getText().toString());
-                bundle.putString("OPERAND02", txtOpd2.getText().toString());
+                bundle.putString("OPERAND01",txtOpd1.getText().toString());
+                bundle.putString("OPERAND02",txtOpd2.getText().toString());
+                intent.putExtras(bundle);
                 startActivityForResult(intent, 1);
-
             }
         });
     }
